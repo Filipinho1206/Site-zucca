@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://filipinho1206.github.io/Site-zucca/sitemap.xml
