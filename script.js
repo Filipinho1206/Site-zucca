@@ -1,3 +1,4 @@
+
 (function(){
   const nav=document.getElementById('nav');
   document.querySelector('.menu-toggle')?.addEventListener('click',()=>nav.classList.toggle('mobile-open'));
@@ -30,9 +31,11 @@
   var stickyCta=document.querySelector('.mobile-sticky-cta');
   var comoSec=document.getElementById('como');
   if(stickyCta&&comoSec){
-    var toggleSticky=function(){var past=comoSec.offsetTop+comoSec.offsetHeight-80;stickyCta.classList.toggle('show',window.scrollY>past);};
-    window.addEventListener('scroll',toggleSticky,{passive:true});
-    window.addEventListener('resize',toggleSticky);
-    toggleSticky();
+    var sTicking=false;
+    var sCheck=function(){stickyCta.classList.toggle('show',comoSec.getBoundingClientRect().bottom<80);sTicking=false;};
+    var sReq=function(){if(!sTicking){sTicking=true;requestAnimationFrame(sCheck);}};
+    window.addEventListener('scroll',sReq,{passive:true});
+    window.addEventListener('resize',sReq,{passive:true});
+    sCheck();
   }
 })();
