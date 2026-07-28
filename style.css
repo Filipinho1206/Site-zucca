@@ -6,7 +6,7 @@
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:'Inter',Arial,sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased}
-a{text-decoration:none;color:inherit} button{font:inherit} img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit} button{font:inherit} img{max-width:100%;display:block;height:auto}
 .serif{font-family:'Instrument Serif',Georgia,serif;font-style:italic;font-weight:400}
 .wrap{width:min(var(--max),calc(100% - 48px));margin:0 auto}.wrap-narrow{width:min(960px,calc(100% - 48px));margin:0 auto}
 .eyebrow{font-size:12px;line-height:1;text-transform:uppercase;letter-spacing:.18em;font-weight:700;color:#54705d}.eyebrow.light{color:#93b49d}
