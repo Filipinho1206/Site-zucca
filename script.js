@@ -1,4 +1,3 @@
-
 (function(){
   const nav=document.getElementById('nav');
   document.querySelector('.menu-toggle')?.addEventListener('click',()=>nav.classList.toggle('mobile-open'));
@@ -27,4 +26,13 @@
   document.querySelectorAll('[data-modal-demo]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('[data-modal-demo]').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const d=demos[btn.dataset.modalDemo];document.getElementById('modal-question').textContent=d.q;document.getElementById('modal-title').textContent=d.t;document.getElementById('modal-copy').textContent=d.c;document.getElementById('modal-r1').textContent=d.r1;document.getElementById('modal-r2').textContent=d.r2;document.getElementById('modal-r3').textContent=d.r3;}));
 
   document.querySelectorAll('.js-start').forEach(a=>a.addEventListener('click',()=>{if(a.getAttribute('href')==='#comecar'){/* internal flow placeholder: replace href with the real onboarding URL before launch */}}));
+
+  var stickyCta=document.querySelector('.mobile-sticky-cta');
+  var comoSec=document.getElementById('como');
+  if(stickyCta&&comoSec){
+    var toggleSticky=function(){var past=comoSec.offsetTop+comoSec.offsetHeight-80;stickyCta.classList.toggle('show',window.scrollY>past);};
+    window.addEventListener('scroll',toggleSticky,{passive:true});
+    window.addEventListener('resize',toggleSticky);
+    toggleSticky();
+  }
 })();
